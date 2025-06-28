@@ -3,8 +3,6 @@
 ```markdown
 # Flask Contact Book with SQLite
 
-![Flask Contact Book Screenshot](screenshot.png) <!-- Replace with your actual screenshot -->
-
 A simple web-based contact management application built with Flask and SQLite, demonstrating CRUD operations with Flask-SQLAlchemy.
 
 ## Features
