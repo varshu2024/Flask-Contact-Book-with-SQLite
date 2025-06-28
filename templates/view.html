@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="mb-4">Contact Details</h1>
+
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ contact.name }}</h5>
+        <p class="card-text"><strong>Phone:</strong> {{ contact.phone }}</p>
+        {% if contact.email %}
+        <p class="card-text"><strong>Email:</strong> {{ contact.email }}</p>
+        {% endif %}
+        {% if contact.address %}
+        <p class="card-text"><strong>Address:</strong> {{ contact.address }}</p>
+        {% endif %}
+    </div>
+    <div class="card-footer">
+        <a href="{{ url_for('edit_contact', contact_id=contact.id) }}" class="btn btn-warning">Edit</a>
+        <form action="{{ url_for('delete_contact', contact_id=contact.id) }}" method="POST" style="display: inline;">
+            <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to List</a>
+    </div>
+</div>
+{% endblock %}
